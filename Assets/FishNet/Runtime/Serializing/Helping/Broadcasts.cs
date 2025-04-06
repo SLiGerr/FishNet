@@ -46,7 +46,17 @@ namespace FishNet.Broadcast.Helping
         {
             return typeof(T).FullName.GetStableHashU16();
         }
+        
+        /// <summary>
+        /// CUSTOM: Gets the key for a broadcast type.
+        /// </summary>
+        /// <returns></returns>
+        internal static ushort GetKey(Type type)
+        {
+            return type.FullName.GetStableHashU16();
+        }
     }
+
 
     /// <summary>
     /// Implemented by server and client broadcast handlers.
